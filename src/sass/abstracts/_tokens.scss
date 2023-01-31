@@ -1,0 +1,96 @@
+@use 'colors' as *;
+@use 'functions' as *;
+@use 'sizes' as *;
+@use 'typography' as *;
+
+/* Move this to other file*/
+
+// border-radius
+$border-radius-1: $size-2;
+$border-radius-2: $size-4;
+
+// shadows
+$box-shadow-1: 0 $size-1 $size-4 rgb(0 0 0 / 0.05);
+$box-shadow-2: 0 $size-1 $size-4 rgb(0 0 0 / 0.15);
+
+// layout
+$grid-gap: $size-5;
+$flex-group-gap: $size-4;
+
+$hero-padding-block: clamp(15rem, 15vh, 20rem);
+$section-padding-block: clamp(3rem, 10vh, 7rem);
+$section-inline-padding: $size-4;
+
+$card-body-padding: $size-8;
+
+$container-min-margin-inline: $size-4;
+$container-max-width-narrow: 40rem;
+$container-max-width: 64rem;
+$container-max-width-wide: 75rem;
+
+//colors
+
+//? contextual color tokens
+$color-neutral-100: var(--neutral-100);
+$color-neutral-200: var(--neutral-200);
+$color-neutral-300: var(--neutral-300);
+$color-neutral-900: var(--neutral-900);
+
+$color-accent-400: var(--accent-400);
+
+$color-primary-400: var(--primary-400);
+$color-primary-700: var(--primary-700);
+
+$color-text-default: $color-neutral-900;
+$color-background-default: $color-neutral-100;
+$color-text-interactive-default: $color-primary-400;
+$color-text-interactive-hover: $color-primary-700;
+
+$letter-spacing-loose: 0.16em;
+
+//? body
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-400;
+$body-line-height: 1.5;
+$body-font-weight: $font-weight-default;
+$body-text-color: $color-text-default;
+$body-background-color: $color-background-default;
+
+//? general
+$link-color: $body-text-color;
+$link-color-hover: $color-primary-700;
+
+$heading-font-family: $font-family-accent;
+$heading-color-default: $body-text-color;
+$heading-font-weight: $font-weight-bold;
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height: 1;
+$heading-text-transform: uppercase;
+
+//? buttons
+$button-font-family: $body-font-family;
+$button-font-size: $font-size-700;
+$button-font-weight: $font-weight-default;
+$button-padding-default: $size-3 $size-6; // 12px 32px
+$button-border: rem(4) solid transparent;
+$button-border-radius: $size-3;
+
+$button-border-hover: rem(4) solid $color-primary-400;
+
+$button-accent-color: $color-neutral-100;
+$button-accent-background: $color-primary-400;
+$button-accent-color-hover: $color-neutral-100;
+$button-accent-background-hover: $color-primary-700;
+
+$button-primary-color: $color-neutral-100;
+$button-primary-background: $color-primary-400;
+$button-primary-color-hover: $color-neutral-100;
+$button-primary-background-hover: $color-primary-700;
+
+//? primary nav
+
+$primary-nav-font-family: $body-font-family;
+$primary-nav-font-weight: $font-weight-bold;
+$primary-nav-font-size: $body-font-size;
+$primary-nav-text-color: $body-text-color;
+$primary-nav-background-color: transparent;
