@@ -1,0 +1,15 @@
+@use '../abstracts/' as *;
+.button {
+	@include flex(row, space-evenly, center);
+	padding-block: 1rem;
+	max-inline-size: 20rem;
+	background-color: $yellow-primary;
+	cursor: pointer;
+	color: #000000;
+	transition: background-color 350ms ease-in-out;
+	font-size: 27px;
+
+	&:hover {
+		background-color: $yellow-secondary;
+	}
+}
