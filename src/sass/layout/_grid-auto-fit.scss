@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+.grid-auto-fit {
+  --min-item-width: 250px;
+
+  display: grid;
+  grid-gap: var(--grid-gap, $grid-gap);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-item-width), 100%), 1fr)
+  );
+
+  #pricing & {
+    --min-item-width: 400px;
+    --grid-gap: 5rem;
+
+    .grid-items {
+      max-width: 40ch;
+      margin-inline: auto;
+    }
+  }
+
+  #appointment & {
+    --min-item-width: 310px;
+  }
+}
