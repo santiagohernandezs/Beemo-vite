@@ -8,35 +8,32 @@ function Home(): JSX.Element {
 	const App3d = lazy(() => import('@/components/App3d'))
 
 	return (
-		<div className='Home'>
+		<main className='main'>
 			{/* navbar component */}
 			{/* <Navbar /> */}
 			{/* banner */}
-			<section className='banner'>
-				{/* <img className='banner__bg' src={Bg} alt='bg' loading='lazy' /> */}
-				img
-				<img className='banner__beemo3d' src={Beemo3d} alt='' loading='lazy' />
-				<div className='banner__content'>
-					<img className='banner__isologo' src={IsoLogo} alt='' loading='lazy' />
-					<div className='banner__title'>
-						<h1 className='banner__h1'>
-							Reune a tu <br /> &nbsp; &nbsp; &nbsp; equipo
+
+			<section className='hero'>
+				<div className='container | even-columns '>
+					{/* <img className='banner__bg' src={Bg} alt='bg' loading='lazy' /> */}
+
+					<img className='hero__beemo3d' src={Beemo3d} alt='' loading='lazy' />
+					<div className='hero__content | flow'>
+						<img className='hero__isologo' src={IsoLogo} alt='' loading='lazy' />
+
+						<h1 className='hero__h1'>
+							Reúne a tu <span className='push-right'> equipo </span>
 						</h1>
-						<div className='banner__h1-rectangle'></div>
+
+						<p>
+							El trabajo en grupo trae consigo grandes cosas, haz que tu equipo forme
+							parte de una de ellas.
+						</p>
+						<Link className='button' to='./Registrate'>
+							<img src={BeemoIcon} alt='beemo icon' loading='lazy' />
+							<p>Comienza Ahora</p>
+						</Link>
 					</div>
-					<p className='banner__p'>
-						El trabajo en grupo trae consigo grandes cosas, haz <br /> que tu equipo forme
-						parte de una de ellas.
-					</p>
-					<Link className='banner__button' to='./Registrate'>
-						<img
-							className='banner__button-icon'
-							src={BeemoIcon}
-							alt='beemo icon'
-							loading='lazy'
-						/>
-						<p className='banner__button-text'>Comienza Ahora</p>
-					</Link>
 				</div>
 			</section>
 			{/* about section */}
@@ -88,7 +85,7 @@ function Home(): JSX.Element {
 			<section className='prices'></section>
 			{/* Footer component */}
 			<Footer />
-		</div>
+		</main>
 	)
 }
 
