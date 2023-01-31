@@ -1,15 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
+@use '../abstracts/' as *;
 body {
-    min-height: 100vh;
-}
+	color: $black-primary;
 
-#root,
-.App{
-    min-height: inherit;
+	@include font-weight('regular');
+	@include font-size('normal');
+	line-height: 1;
 }
