@@ -11,16 +11,36 @@ function Home(): JSX.Element {
 		<main className='main'>
 			{/* navbar component */}
 			{/* <Navbar /> */}
+
+			<header>
+				<div className='container' data-type='wide'>
+					<nav className='primary-nav '>
+						<img className='isologo' src={IsoLogo} alt='' loading='lazy' />
+						<ul className='flex-group'>
+							<li>
+								<a href='#'>Nosotros</a>
+							</li>
+							<li>
+								<a href='#'>Precios</a>
+							</li>
+							<li>
+								<a href='#'>Contacto</a>
+							</li>
+							<li>
+								<a href='#'>Entrar</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
 			{/* banner */}
 
 			<section className='hero'>
-				<div className='container | even-columns '>
+				<div className='container | even-columns ' data-type='wide'>
 					{/* <img className='banner__bg' src={Bg} alt='bg' loading='lazy' /> */}
 
 					<img className='hero__beemo3d' src={Beemo3d} alt='' loading='lazy' />
 					<div className='hero__content | flow'>
-						<img className='hero__isologo' src={IsoLogo} alt='' loading='lazy' />
-
 						<h1 className='hero__h1'>
 							Reúne a tu <span className='push-right'> equipo </span>
 						</h1>

@@ -1,8 +1,17 @@
 @use '../abstracts/' as *;
 
+/*TODO
+	- [ ] beemo3d SVG need processing lot of white space.
+	- [ ] Create a utility class for heading (special heading)
+	- [ ] Maybe a class to center stuff on content?
+	*/
+
 .hero {
+	--flow-spacer: 3rem;
+
+	/* It's a pseudo element that is used to create a background for the hero section with a custom clip-path */
 	&::before {
-		background-color: $yellow-primary;
+		background-color: $color-primary-400;
 		content: '';
 		width: 100%;
 		height: 100vh;
@@ -12,21 +21,8 @@
 		clip-path: url('#clip');
 	}
 
-	--flow-spacer: 3rem;
-
 	.container {
 		block-size: 100vh;
-	}
-
-	&__isologo {
-		position: absolute;
-		top: 5%;
-		inline-size: 14rem;
-	}
-	&__bg {
-		position: absolute;
-		right: 0%;
-		height: 100%;
 	}
 
 	&__beemo3d {
@@ -47,7 +43,7 @@
 
 	&__h1 {
 		font-family: 'Megistica';
-		@include font-size('extra-gigantic');
+		font-size: $font-size-900;
 
 		span {
 			position: relative;
@@ -56,7 +52,7 @@
 				content: '';
 				display: block;
 				inline-size: 6.875rem;
-				background-color: $yellow-primary;
+				background-color: $color-primary-400;
 				block-size: 1rem;
 				inset-block: 0;
 				margin-block: auto;
@@ -66,19 +62,24 @@
 	}
 }
 
+// Need to review code below
+
 .about {
 	position: relative;
 	min-height: 100vh;
 	margin-top: 5rem;
 
 	&__text-container {
-		@include flex(row, center, center);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
 		height: 24%;
 		gap: 15rem;
 
 		&-title {
 			font-family: 'Raleway', sans-serif;
-			color: $brown-primary;
+			color: $color-accent-400;
 			height: 114px;
 			width: 31%;
 
@@ -86,15 +87,16 @@
 				width: 38rem;
 				height: auto;
 				font-style: normal;
-				@include font-weight('semi-bold');
-				@include font-size('extra-large');
+				font-weight: $font-weight-semi-bold;
+				font-size: $font-size-700;
 				line-height: 60px;
 			}
 		}
 
 		&-p {
 			font-family: 'Raleway', sans-serif;
-			@include font-weight('regular');
+
+			font-weight: $font-weight-default;
 			width: 762px;
 			height: 97px;
 			font-size: 22px;
@@ -104,24 +106,32 @@
 		}
 
 		h1 > span {
-			color: $yellow-primary;
+			color: $color-primary-400;
 		}
 	}
 
 	.cards {
-		@include flex(row, center, center);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		height: 55%;
 		margin: 5rem 0rem;
 		font-family: 'Raleway', sans-serif;
 
 		&__container {
-			@include flex(row, center, center);
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
 			gap: 138px;
 			padding: 70px 10px;
 			margin-top: 20px;
 
 			.card {
-				@include flex(column, center, center);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 				background-color: #fffffe;
 				padding-top: 2rem;
 				width: 375px;
@@ -131,7 +141,11 @@
 			}
 
 			.card__image__container {
-				@include flex(row, center, center);
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+
 				height: auto;
 				filter: drop-shadow(rgba(0, 0, 0, 0.01) -22.3768px 41.0242px 18.6473px)
 					drop-shadow(rgba(0, 0, 0, 0.05) -12.1208px 23.3092px 15.8502px)
@@ -144,51 +158,72 @@
 				color: #2e2b28;
 				padding: 5%;
 				margin-top: 0.5%;
-				@include font-size('normal');
+
+				font-size: $font-size-400;
 			}
 
 			.card__paragraph__container {
 				font-style: normal;
-				@include font-weight('medium');
+
+				font-weight: $font-weight-medium;
 				color: rgb(46, 43, 40);
 				padding: 3% 7%;
 				text-align: justify;
-				@include font-size('small');
+				font-size: $font-size-400;
 			}
 		}
 	}
 
 	.explanation {
-		@include flex(column, center, center);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
 		&__text-container {
-			@include flex(column, center, center);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			margin-bottom: 8rem;
 
 			&-title > h1 {
 				font-family: 'Raleway', sans-serif;
-				color: $brown-primary;
+				color: $color-accent-400;
 				height: auto;
 				font-style: normal;
-				@include font-weight('semi-bold');
+
+				font-weight: $font-weight-semi-bold;
 				font-size: 51px;
 				line-height: 60px;
 			}
 		}
 
 		&__badges__container {
-			@include flex(row, center, center, wrap);
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
 			margin-bottom: 10rem;
 			width: 72%;
 			column-gap: 9rem;
 			row-gap: 7rem;
 
 			.badge__container {
-				@include flex(column, center, center);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
 				width: 22rem;
 
 				&-badge {
-					@include flex(row, center, center);
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
 					height: 7rem;
 					width: 7rem;
 					border-radius: 70px;
@@ -224,8 +259,11 @@
 	.visuals {
 		position: relative;
 		height: 83vh;
-		background-color: $white-primary;
-		@include flex(row, center, center);
+		background-color: $color-neutral-100;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
 
 		&__app3d {
 			height: 100%;
@@ -236,27 +274,37 @@
 		}
 
 		&__text {
-			@include flex(column, center, center);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			height: 100%;
 			width: 50%;
 			gap: 4rem;
 
 			&-card {
-				@include flex(row, center, center);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 				width: 100%;
 				grid-column-gap: 3rem;
 			}
 
 			&-h1 {
 				font-family: 'Megistica';
-				color: $brown-primary;
+				color: $color-accent-400;
 				height: auto;
 				font-style: normal;
 				font-size: 5rem;
 			}
 
 			&-tiles {
-				@include flex(row, center, center, wrap);
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
 				gap: 2rem;
 				height: 43%;
 				padding: 0.5rem;
@@ -300,11 +348,14 @@
 
 footer {
 	position: relative;
-	background-color: $yellow-primary;
+	background-color: $color-primary-400;
 	padding: 2rem;
 
 	.footerContainer {
-		@include flex(column, center, center);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.iconContainer {
@@ -312,7 +363,10 @@ footer {
 	}
 
 	.footerNavbar {
-		@include flex(row, center, center);
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
 		list-style: none;
 		margin: 0.5rem;
 	}
@@ -320,7 +374,7 @@ footer {
 	.footerNavbarItem {
 		font-family: 'Raleway', sans-serif;
 		text-decoration: none;
-		color: $brown-primary;
+		color: $color-accent-400;
 	}
 
 	.socialContainer {
@@ -335,7 +389,8 @@ footer {
 
 	.DMCA {
 		font-family: 'Raleway', sans-serif;
-		@include font-weight('semi-bold');
+
+		font-weight: $font-weight-semi-bold;
 		margin: 0.5rem;
 	}
 }
