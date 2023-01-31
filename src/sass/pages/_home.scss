@@ -1,395 +1,341 @@
 @use '../abstracts/' as *;
 
-.Home {
-	min-height: inherit;
-
-	navbar {
+.hero {
+	&::before {
+		background-color: $yellow-primary;
+		content: '';
+		width: 100%;
+		height: 100vh;
+		display: block;
 		position: absolute;
-		right: 2rem;
-		top: 5rem;
-		z-index: 1;
-		background-color: transparent;
+		z-index: -1;
+		clip-path: url('#clip');
+	}
 
-		.navlinks {
-			display: flex;
-			list-style: none;
+	--flow-spacer: 3rem;
 
-			.link {
-				margin-right: 10px;
-				font-family: 'Raleway', sans-serif;
-				font-size: 1.8rem;
-				color: $brown-primary;
-				cursor: pointer;
-				@include font-weight('semi-bold');
-				padding: 10px;
-				text-decoration: none;
-				transition: text-decoration 1s;
+	.container {
+		block-size: 100vh;
+	}
 
-				&:hover {
-					text-decoration: solid;
-				}
+	&__isologo {
+		position: absolute;
+		top: 5%;
+		inline-size: 14rem;
+	}
+	&__bg {
+		position: absolute;
+		right: 0%;
+		height: 100%;
+	}
+
+	&__beemo3d {
+		width: 80%;
+		transform: translate(10rem, 5rem);
+		align-self: center;
+		grid-column: 2 / 3;
+		filter: drop-shadow(342px 342px 194px rgba(0, 0, 0, 0.01))
+			drop-shadow(192px 192px 163px rgba(0, 0, 0, 0.05))
+			drop-shadow(86px 86px 121px rgba(0, 0, 0, 0.09))
+			drop-shadow(21px 21px 67px rgba(0, 0, 0, 0.1))
+			drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+	}
+
+	&__content {
+		align-self: center;
+	}
+
+	&__h1 {
+		font-family: 'Megistica';
+		@include font-size('extra-gigantic');
+
+		span {
+			position: relative;
+			&::before {
+				position: absolute;
+				content: '';
+				display: block;
+				inline-size: 6.875rem;
+				background-color: $yellow-primary;
+				block-size: 1rem;
+				inset-block: 0;
+				margin-block: auto;
+				inset-inline-start: 0;
 			}
 		}
 	}
+}
 
-	.banner {
-		height: 100vh;
-		z-index: 0;
-		position: relative;
+.about {
+	position: relative;
+	min-height: 100vh;
+	margin-top: 5rem;
 
-		&__bg {
-			position: absolute;
-			right: 0%;
-			height: 100%;
-		}
+	&__text-container {
+		@include flex(row, center, center);
+		height: 24%;
+		gap: 15rem;
 
-		&__beemo3d {
-			position: absolute;
-			right: 16%;
-			top: 21%;
-			filter: drop-shadow(342px 342px 194px rgba(0, 0, 0, 0.01))
-				drop-shadow(192px 192px 163px rgba(0, 0, 0, 0.05))
-				drop-shadow(86px 86px 121px rgba(0, 0, 0, 0.09))
-				drop-shadow(21px 21px 67px rgba(0, 0, 0, 0.1))
-				drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
-		}
-
-		&__content {
-			@include flex(column, flex-start, flex-start);
-			height: 43.7rem;
-			width: 34rem;
-			position: absolute;
-			top: 4rem;
-			left: 6.3rem;
-		}
-
-		&__isologo {
-			height: 5.7rem;
-			flex-grow: 0;
-		}
-
-		&__title {
-			height: auto;
-			width: -moz-fit-content;
-			width: fit-content;
-			position: relative;
-			margin-top: 12.5rem;
+		&-title {
+			font-family: 'Raleway', sans-serif;
 			color: $brown-primary;
-		}
+			height: 114px;
+			width: 31%;
 
-		&__h1 {
-			font-family: 'Megistica';
-			@include font-size('extra-gigantic');
-
-			&-rectangle {
-				position: absolute;
-				bottom: 2.3rem;
-				border: 9px solid $yellow-primary;
-				width: 110px;
+			& > h1 {
+				width: 38rem;
+				height: auto;
+				font-style: normal;
+				@include font-weight('semi-bold');
+				@include font-size('extra-large');
+				line-height: 60px;
 			}
 		}
 
-		&__p {
-			font-family: 'Raleway';
-			text-align: justify;
-			font-style: normal;
+		&-p {
+			font-family: 'Raleway', sans-serif;
 			@include font-weight('regular');
-			@include font-size('normal');
-			margin-top: 3.2rem;
-			line-height: 26px;
+			width: 762px;
+			height: 97px;
+			font-size: 22px;
+			line-height: 143%;
+			text-align: justify;
+			color: #000000;
 		}
 
-		&__button {
-			@include flex(row, space-evenly, center);
-			width: 306.65px;
-			height: 77px;
-			background-color: $yellow-primary;
-			cursor: pointer;
-			margin-top: 3rem;
-			text-decoration: none;
+		h1 > span {
+			color: $yellow-primary;
+		}
+	}
 
-			&-text {
-				font-family: 'Raleway';
+	.cards {
+		@include flex(row, center, center);
+		height: 55%;
+		margin: 5rem 0rem;
+		font-family: 'Raleway', sans-serif;
+
+		&__container {
+			@include flex(row, center, center);
+			gap: 138px;
+			padding: 70px 10px;
+			margin-top: 20px;
+
+			.card {
+				@include flex(column, center, center);
+				background-color: #fffffe;
+				padding-top: 2rem;
+				width: 375px;
+				height: 380px;
+				border-radius: 15px;
+				box-shadow: 0px 5px 42px rgba(0, 0, 0, 0.22);
+			}
+
+			.card__image__container {
+				@include flex(row, center, center);
+				height: auto;
+				filter: drop-shadow(rgba(0, 0, 0, 0.01) -22.3768px 41.0242px 18.6473px)
+					drop-shadow(rgba(0, 0, 0, 0.05) -12.1208px 23.3092px 15.8502px)
+					drop-shadow(rgba(0, 0, 0, 0.09) -5.5942px 10.256px 12.1208px)
+					drop-shadow(rgba(0, 0, 0, 0.1) -0.932367px 2.7971px 6.52657px)
+					drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 0px);
+			}
+
+			.card__title__container {
+				color: #2e2b28;
+				padding: 5%;
+				margin-top: 0.5%;
+				@include font-size('normal');
+			}
+
+			.card__paragraph__container {
 				font-style: normal;
 				@include font-weight('medium');
-				font-size: 27px;
-				line-height: 32px;
-				color: #000000;
+				color: rgb(46, 43, 40);
+				padding: 3% 7%;
+				text-align: justify;
+				@include font-size('small');
 			}
 		}
 	}
 
-	.about {
-		position: relative;
-		min-height: 100vh;
-		margin-top: 5rem;
+	.explanation {
+		@include flex(column, center, center);
 
 		&__text-container {
-			@include flex(row, center, center);
-			height: 24%;
-			gap: 15rem;
+			@include flex(column, center, center);
+			margin-bottom: 8rem;
 
-			&-title {
+			&-title > h1 {
 				font-family: 'Raleway', sans-serif;
 				color: $brown-primary;
-				height: 114px;
-				width: 31%;
-
-				& > h1 {
-					width: 38rem;
-					height: auto;
-					font-style: normal;
-					@include font-weight('semi-bold');
-					@include font-size('extra-large');
-					line-height: 60px;
-				}
-			}
-
-			&-p {
-				font-family: 'Raleway', sans-serif;
-				@include font-weight('regular');
-				width: 762px;
-				height: 97px;
-				font-size: 22px;
-				line-height: 143%;
-				text-align: justify;
-				color: #000000;
-			}
-
-			h1 > span {
-				color: $yellow-primary;
+				height: auto;
+				font-style: normal;
+				@include font-weight('semi-bold');
+				font-size: 51px;
+				line-height: 60px;
 			}
 		}
 
-		.cards {
-			@include flex(row, center, center);
-			height: 55%;
-			margin: 5rem 0rem;
-			font-family: 'Raleway', sans-serif;
+		&__badges__container {
+			@include flex(row, center, center, wrap);
+			margin-bottom: 10rem;
+			width: 72%;
+			column-gap: 9rem;
+			row-gap: 7rem;
 
-			&__container {
-				@include flex(row, center, center);
-				gap: 138px;
-				padding: 70px 10px;
-				margin-top: 20px;
-
-				.card {
-					@include flex(column, center, center);
-					background-color: #fffffe;
-					padding-top: 2rem;
-					width: 375px;
-					height: 380px;
-					border-radius: 15px;
-					box-shadow: 0px 5px 42px rgba(0, 0, 0, 0.22);
-				}
-
-				.card__image__container {
-					@include flex(row, center, center);
-					height: auto;
-					filter: drop-shadow(rgba(0, 0, 0, 0.01) -22.3768px 41.0242px 18.6473px)
-						drop-shadow(rgba(0, 0, 0, 0.05) -12.1208px 23.3092px 15.8502px)
-						drop-shadow(rgba(0, 0, 0, 0.09) -5.5942px 10.256px 12.1208px)
-						drop-shadow(rgba(0, 0, 0, 0.1) -0.932367px 2.7971px 6.52657px)
-						drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 0px);
-				}
-
-				.card__title__container {
-					color: #2e2b28;
-					padding: 5%;
-					margin-top: 0.5%;
-					@include font-size('normal');
-				}
-
-				.card__paragraph__container {
-					font-style: normal;
-					@include font-weight('medium');
-					color: rgb(46, 43, 40);
-					padding: 3% 7%;
-					text-align: justify;
-					@include font-size('small');
-				}
-			}
-		}
-
-		.explanation {
-			@include flex(column, center, center);
-
-			&__text-container {
+			.badge__container {
 				@include flex(column, center, center);
-				margin-bottom: 8rem;
+				width: 22rem;
 
-				&-title > h1 {
-					font-family: 'Raleway', sans-serif;
-					color: $brown-primary;
-					height: auto;
-					font-style: normal;
-					@include font-weight('semi-bold');
-					font-size: 51px;
-					line-height: 60px;
-				}
-			}
+				&-badge {
+					@include flex(row, center, center);
+					height: 7rem;
+					width: 7rem;
+					border-radius: 70px;
+					margin-bottom: 2rem;
+					background-color: #ffffff;
+					box-shadow: rgba(0, 0, 0, 0.22) 0px 5px 42px;
+					transition: all 0.2s ease-in-out;
 
-			&__badges__container {
-				@include flex(row, center, center, wrap);
-				margin-bottom: 10rem;
-				width: 72%;
-				column-gap: 9rem;
-				row-gap: 7rem;
-
-				.badge__container {
-					@include flex(column, center, center);
-					width: 22rem;
-
-					&-badge {
-						@include flex(row, center, center);
-						height: 7rem;
-						width: 7rem;
-						border-radius: 70px;
-						margin-bottom: 2rem;
-						background-color: #ffffff;
-						box-shadow: rgba(0, 0, 0, 0.22) 0px 5px 42px;
+					&:hover {
+						transform: scale(1.1);
 						transition: all 0.2s ease-in-out;
-
-						&:hover {
-							transform: scale(1.1);
-							transition: all 0.2s ease-in-out;
-							background-color: rgba(255, 190, 11, 0.5);
-						}
-
-						&-img {
-							height: 3rem;
-							width: 3rem;
-						}
+						background-color: rgba(255, 190, 11, 0.5);
 					}
 
-					&-text {
-						font-family: Raleway;
-						color: rgb(46, 43, 40);
-						height: auto;
-						font-style: normal;
-						font-size: 25px;
-						text-align: center;
+					&-img {
+						height: 3rem;
+						width: 3rem;
 					}
 				}
-			}
-		}
 
-		.visuals {
-			position: relative;
-			height: 83vh;
-			background-color: $white-primary;
-			@include flex(row, center, center);
-
-			&__app3d {
-				height: 100%;
-				width: 50%;
-				// display: flex;
-				// justify-content: center;
-				// align-items: center;
-			}
-
-			&__text {
-				@include flex(column, center, center);
-				height: 100%;
-				width: 50%;
-				gap: 4rem;
-
-				&-card {
-					@include flex(row, center, center);
-					width: 100%;
-					grid-column-gap: 3rem;
-				}
-
-				&-h1 {
-					font-family: 'Megistica';
-					color: $brown-primary;
+				&-text {
+					font-family: Raleway;
+					color: rgb(46, 43, 40);
 					height: auto;
 					font-style: normal;
-					font-size: 5rem;
-				}
-
-				&-tiles {
-					@include flex(row, center, center, wrap);
-					gap: 2rem;
-					height: 43%;
-					padding: 0.5rem;
-
-					.tile {
-						width: 39%;
-						height: 38%;
-						background-color: rgba(255, 190, 11, 0.1);
-						border-radius: 21px;
-						display: flex;
-						justify-content: space-evenly;
-						align-items: center;
-
-						&__icon {
-							height: 67%;
-							width: 26%;
-							background-color: rgba(255, 254, 254, 0.51);
-							border-radius: 20px;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-
-							&-img {
-								width: 60%;
-							}
-						}
-
-						&__text {
-							height: auto;
-							width: 58%;
-							font-family: 'Raleway';
-							display: flex;
-							flex-direction: column;
-							gap: 0.4rem;
-						}
-					}
+					font-size: 25px;
+					text-align: center;
 				}
 			}
 		}
 	}
 
-	footer {
+	.visuals {
 		position: relative;
-		background-color: $yellow-primary;
-		padding: 2rem;
+		height: 83vh;
+		background-color: $white-primary;
+		@include flex(row, center, center);
 
-		.footerContainer {
+		&__app3d {
+			height: 100%;
+			width: 50%;
+			// display: flex;
+			// justify-content: center;
+			// align-items: center;
+		}
+
+		&__text {
 			@include flex(column, center, center);
-		}
+			height: 100%;
+			width: 50%;
+			gap: 4rem;
 
-		.iconContainer {
-			margin-bottom: 2rem;
-		}
+			&-card {
+				@include flex(row, center, center);
+				width: 100%;
+				grid-column-gap: 3rem;
+			}
 
-		.footerNavbar {
-			@include flex(row, center, center);
-			list-style: none;
-			margin: 0.5rem;
-		}
+			&-h1 {
+				font-family: 'Megistica';
+				color: $brown-primary;
+				height: auto;
+				font-style: normal;
+				font-size: 5rem;
+			}
 
-		.footerNavbarItem {
-			font-family: 'Raleway', sans-serif;
-			text-decoration: none;
-			color: $brown-primary;
-		}
+			&-tiles {
+				@include flex(row, center, center, wrap);
+				gap: 2rem;
+				height: 43%;
+				padding: 0.5rem;
 
-		.socialContainer {
-			margin: 0.5rem;
-			display: flex;
-			gap: 2rem;
+				.tile {
+					width: 39%;
+					height: 38%;
+					background-color: rgba(255, 190, 11, 0.1);
+					border-radius: 21px;
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
 
-			& > img {
-				height: 100%;
+					&__icon {
+						height: 67%;
+						width: 26%;
+						background-color: rgba(255, 254, 254, 0.51);
+						border-radius: 20px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						&-img {
+							width: 60%;
+						}
+					}
+
+					&__text {
+						height: auto;
+						width: 58%;
+						font-family: 'Raleway';
+						display: flex;
+						flex-direction: column;
+						gap: 0.4rem;
+					}
+				}
 			}
 		}
+	}
+}
 
-		.DMCA {
-			font-family: 'Raleway', sans-serif;
-			@include font-weight('semi-bold');
-			margin: 0.5rem;
+footer {
+	position: relative;
+	background-color: $yellow-primary;
+	padding: 2rem;
+
+	.footerContainer {
+		@include flex(column, center, center);
+	}
+
+	.iconContainer {
+		margin-bottom: 2rem;
+	}
+
+	.footerNavbar {
+		@include flex(row, center, center);
+		list-style: none;
+		margin: 0.5rem;
+	}
+
+	.footerNavbarItem {
+		font-family: 'Raleway', sans-serif;
+		text-decoration: none;
+		color: $brown-primary;
+	}
+
+	.socialContainer {
+		margin: 0.5rem;
+		display: flex;
+		gap: 2rem;
+
+		& > img {
+			height: 100%;
 		}
+	}
+
+	.DMCA {
+		font-family: 'Raleway', sans-serif;
+		@include font-weight('semi-bold');
+		margin: 0.5rem;
 	}
 }
