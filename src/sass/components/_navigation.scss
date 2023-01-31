@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.primary-nav {
+	--flex-column-gap: #{$size-9};
+
+	margin-block-start: $size-4;
+	position: absolute;
+	inline-size: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	font-weight: $primary-nav-font-weight;
+	font-size: $primary-nav-font-size;
+	color: $primary-nav-text-color;
+	background-color: $primary-nav-background-color;
+	font-family: $primary-nav-font-family;
+
+	.isologo {
+		width: rem(250);
+	}
+}
