@@ -4,7 +4,7 @@
 	//colors
 	@each $color-name, $shade-map in $colors {
 		@each $shade-name, $shade-value in $shade-map {
-			--#{$color-name}-#{$shade-name}: #{$shade-value};
+			--color-#{$color-name}-#{$shade-name}: #{$shade-value};
 		}
 	}
 

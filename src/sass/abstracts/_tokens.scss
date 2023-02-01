@@ -31,15 +31,15 @@ $container-max-width-wide: 75rem;
 //colors
 
 //? contextual color tokens
-$color-neutral-100: var(--neutral-100);
-$color-neutral-200: var(--neutral-200);
-$color-neutral-300: var(--neutral-300);
-$color-neutral-900: var(--neutral-900);
+$color-neutral-100: var(--color-neutral-100);
+$color-neutral-200: var(--color-neutral-200);
+$color-neutral-600: var(--color-neutral-600);
+$color-neutral-900: var(--color-neutral-900);
 
-$color-accent-400: var(--accent-400);
+$color-accent-400: var(--color-accent-400);
 
-$color-primary-400: var(--primary-400);
-$color-primary-700: var(--primary-700);
+$color-primary-400: var(--color-primary-400);
+$color-primary-700: var(--color-primary-700);
 
 $color-text-default: $color-neutral-900;
 $color-background-default: $color-neutral-100;
