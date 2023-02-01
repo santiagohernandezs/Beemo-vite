@@ -12,6 +12,9 @@ $border-radius-2: $size-4;
 // shadows
 $box-shadow-1: 0 $size-1 $size-4 rgb(0 0 0 / 0.05);
 $box-shadow-2: 0 $size-1 $size-4 rgb(0 0 0 / 0.15);
+$box-shadow-design-define: 0px 229px 92px rgba(53, 41, 29, 0.01),
+	0px 129px 77px rgba(53, 41, 29, 0.05), 0px 57px 57px rgba(53, 41, 29, 0.09),
+	0px 14px 31px rgba(53, 41, 29, 0.1), 0px 0px 0px rgba(53, 41, 29, 0.1);
 
 // layout
 $grid-gap: $size-5;
@@ -94,3 +97,9 @@ $primary-nav-font-weight: $font-weight-bold;
 $primary-nav-font-size: $body-font-size;
 $primary-nav-text-color: $body-text-color;
 $primary-nav-background-color: transparent;
+
+//? cards
+
+$card-inline-padding: $size-8 $size-12;
+$card-border-radius: $border-radius-2;
+$card-box-shadow: $box-shadow-design-define;

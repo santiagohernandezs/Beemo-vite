@@ -1,12 +1,11 @@
 import { Beemo3d, BeemoIcon, IsoLogo } from '@assets/index'
-import { Badge, Footer, Tile } from '@components/index'
+import { Badge, Footer, Tile, CardStatic } from '@components/index'
 import { badgeInfo, tileInfo } from '@data/homeData'
 import { lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 
 function Home(): JSX.Element {
 	const App3d = lazy(() => import('@/components/App3d'))
-
 	return (
 		<main className='main'>
 			{/* navbar component */}
@@ -33,15 +32,15 @@ function Home(): JSX.Element {
 					</nav>
 				</div>
 			</header>
-			{/* banner */}
-
+			{/*  hero */}
 			<section className='hero'>
 				<div className='container | even-columns ' data-type='wide'>
 					{/* <img className='banner__bg' src={Bg} alt='bg' loading='lazy' /> */}
-
-					<img className='hero__beemo3d' src={Beemo3d} alt='' loading='lazy' />
-					<div className='hero__content | flow'>
-						<h1 className='hero__h1'>
+					<div className='grid-image'>
+						<img className='hero__beemo3d' src={Beemo3d} alt='' loading='lazy' />
+					</div>
+					<div className='grid-item | flow'>
+						<h1 className='heading-special' data-type='special'>
 							Reúne a tu <span className='push-right'> equipo </span>
 						</h1>
 
@@ -57,23 +56,40 @@ function Home(): JSX.Element {
 				</div>
 			</section>
 			{/* about section */}
-			<section className='about'>
-				<div className='about__text-container'>
-					<div className='about__text-container-title'>
-						<h1>
-							LO QUE TENEMOS PARA <br />
-							<span>OFRECERTE</span>
-						</h1>
-					</div>
-					<div className='about__text-container-p'>
-						<p>
-							Sin negar nuestro compromiso con las organizaciones, nuestro foco central
-							está en el usuario y su experiencia de uso, por ello Beemo ofrece una
-							plataforma:
-						</p>
-					</div>
+			<article className='margin-block-10'>
+				<div className='container | even-columns' data-type='wide'>
+					<h2 className='heading-2'>
+						LO QUE TENEMOS PARA
+						<span className='text-primary-400'> OFRECERTE. </span>
+					</h2>
+					<p>
+						Sin negar nuestro compromiso con las organizaciones, nuestro foco central está
+						en el usuario y su experiencia de uso, por ello Beemo ofrece una plataforma:
+					</p>
 				</div>
-				<div className='cards'></div>
+			</article>
+			<section className='section |  padding-block-start-1'>
+				<div className='container'>
+					<CardStatic
+						img='hey'
+						title='Title'
+						content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel mauris vulputate, cursus diam eu, laoreet risus. Nulla ut est et ligula hendrerit consectetur. Pellentesque non scelerisque nisl. Aliquam ut egestas ligula.'
+					/>
+					<CardStatic
+						img='hey'
+						title='Title'
+						content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel mauris vulputate, cursus diam eu, laoreet risus. Nulla ut est et ligula hendrerit consectetur. Pellentesque non scelerisque nisl. Aliquam ut egestas ligula.'
+						dir='left'
+					/>
+					<CardStatic
+						img='hey'
+						title='Title'
+						content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel mauris vulputate, cursus diam eu, laoreet risus. Nulla ut est et ligula hendrerit consectetur. Pellentesque non scelerisque nisl. Aliquam ut egestas ligula.'
+						dir='right'
+					/>
+				</div>
+			</section>
+			<section className='about'>
 				<div className='explanation'>
 					<div className='explanation__text-container'>
 						<div className='explanation__text-container-title'>

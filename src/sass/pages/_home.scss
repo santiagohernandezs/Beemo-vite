@@ -2,12 +2,16 @@
 
 /*TODO
 	- [ ] beemo3d SVG need processing lot of white space.
-	- [ ] Create a utility class for heading (special heading)
+	- [x] Create a utility class for heading (special heading)
 	- [ ] Maybe a class to center stuff on content?
 	*/
 
 .hero {
 	--flow-spacer: 3rem;
+
+	.container {
+		block-size: 100vh;
+	}
 
 	/* It's a pseudo element that is used to create a background for the hero section with a custom clip-path */
 	&::before {
@@ -21,15 +25,9 @@
 		clip-path: url('#clip');
 	}
 
-	.container {
-		block-size: 100vh;
-	}
+	.hero__beemo3d {
+		transform: translate(8rem, 7rem);
 
-	&__beemo3d {
-		width: 80%;
-		transform: translate(10rem, 5rem);
-		align-self: center;
-		grid-column: 2 / 3;
 		filter: drop-shadow(342px 342px 194px rgba(0, 0, 0, 0.01))
 			drop-shadow(192px 192px 163px rgba(0, 0, 0, 0.05))
 			drop-shadow(86px 86px 121px rgba(0, 0, 0, 0.09))
@@ -37,27 +35,15 @@
 			drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
 	}
 
-	&__content {
-		align-self: center;
+	.grid-image {
+		grid-column: 2 / 3;
 	}
+	.grid-item {
+		align-self: center;
+		inline-size: 100%;
 
-	&__h1 {
-		font-family: 'Megistica';
-		font-size: $font-size-900;
-
-		span {
-			position: relative;
-			&::before {
-				position: absolute;
-				content: '';
-				display: block;
-				inline-size: 6.875rem;
-				background-color: $color-primary-400;
-				block-size: 1rem;
-				inset-block: 0;
-				margin-block: auto;
-				inset-inline-start: 0;
-			}
+		p {
+			max-width: 40ch;
 		}
 	}
 }
