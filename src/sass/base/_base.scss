@@ -10,3 +10,10 @@ body {
 a {
 	color: $link-color;
 }
+
+.about {
+	p {
+		font-size: rem(20);
+		line-height: 1.4;
+	}
+}
