@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+.wavy-background {
+	position: relative;
+	z-index: -1;
+	&::before,
+	&::after {
+		content: '';
+		width: 100%;
+		height: 10rem;
+
+		padding-block: 10rem;
+		position: absolute;
+		background-color: $body-background-color;
+	}
+	&::before {
+		top: -5%;
+
+		clip-path: url('#background-top');
+	}
+	&::after {
+		bottom: -5%;
+
+		clip-path: url('#background-bottom');
+	}
+
+	.container {
+		padding-block: 5rem;
+	}
+}

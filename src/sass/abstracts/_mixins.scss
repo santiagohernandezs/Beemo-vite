@@ -1,21 +1,24 @@
+@use 'sass:meta';
+@use 'sass:math';
+@use 'sass:map';
+@use 'breakpoints' as *;
 @use 'variables' as *;
-// font-weight mixin
-@mixin font-weight($key) {
-	$size: map-get($font-weights, $key);
-	font-weight: $size;
-}
 
-// flex mixin
-@mixin flex($direction, $justify, $align, $wrap: nowrap) {
-	display: flex;
-	flex-direction: $direction;
-	justify-content: $justify;
-	align-items: $align;
-	flex-wrap: $wrap;
-}
-
-// font-size mixin
-@mixin font-size($key) {
-	$size: map-get($font-sizes, $key);
-	font-size: $size;
+@mixin mq($size) {
+	@if map.has-key($breakpoints, $size) {
+		$breakpoint: map-get($breakpoints, $size);
+		@media screen and (min-width: $breakpoint) {
+			@content;
+		}
+	} @else if meta.type-of($size) == number {
+		@if math.is-unitless($size) {
+			@error 'when using a number with @mq() make sure to include a unit';
+		} @else {
+			@media screen and (min-width: $size) {
+				@content;
+			}
+		}
+	} @else {
+		@error 'the keyword #{$size} is not in the $breakpoints map';
+	}
 }

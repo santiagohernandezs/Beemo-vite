@@ -1,0 +1,25 @@
+@use '../abstracts/' as *;
+
+.badge {
+	display: $badge-display;
+	row-gap: $badge-row-gap;
+	font-size: $font-size-400;
+	max-inline-size: $badge-text-max-width;
+	text-align: $badge-text-align;
+
+	place-items: $badge-align-items;
+
+	.badge__img-container {
+		border-radius: $badge-img-border-radius;
+		background-color: $badge-img-background-color;
+		padding: $badge-img-padding;
+		display: $badge-img-display;
+		justify-content: $badge-img-alignment;
+		align-items: $badge-img-alignment;
+		box-shadow: $box-shadow-design-define;
+		transition: background-color 350ms ease-in-out;
+		&:hover {
+			background-color: $color-primary-700;
+		}
+	}
+}

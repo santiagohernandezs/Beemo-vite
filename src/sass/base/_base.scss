@@ -1,8 +1,19 @@
 @use '../abstracts/' as *;
 body {
-	color: $black-primary;
+	font-family: $body-font-family;
+	font-size: $body-font-size;
+	color: $body-text-color;
+	line-height: $body-line-height;
+	background-color: $body-background-color;
+}
 
-	@include font-weight('regular');
-	@include font-size('normal');
-	line-height: 1;
+a {
+	color: $link-color;
+}
+
+.about {
+	p {
+		font-size: rem(20);
+		line-height: 1.4;
+	}
 }

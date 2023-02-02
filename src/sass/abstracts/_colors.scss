@@ -1,0 +1,25 @@
+//? global color tokens
+$_clr-white: hsl(0 0% 100%);
+$_clr-grey-200: hsl(0, 0%, 97%);
+$_clr-grey-600: hsl(0, 0%, 36%);
+$_clr-grey-800: hsl(180, 4%, 14%);
+$_clr-black: hsl(0, 0%, 14%);
+$_clr-yellow-400: hsl(44, 100%, 52%);
+$_clr-yellow-700: hsla(44, 100%, 52%, 0.24);
+$_clr-brown-400: hsl(30, 7%, 17%);
+
+$colors: (
+	'neutral': (
+		100: $_clr-white,
+		200: $_clr-grey-200,
+		600: $_clr-grey-600,
+		900: $_clr-black
+	),
+	'accent': (
+		400: $_clr-brown-400
+	),
+	'primary': (
+		400: $_clr-yellow-400,
+		700: $_clr-yellow-700
+	)
+);

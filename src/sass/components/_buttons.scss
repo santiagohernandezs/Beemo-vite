@@ -1,15 +1,22 @@
 @use '../abstracts/' as *;
 .button {
-	@include flex(row, space-evenly, center);
-	padding-block: 1rem;
-	max-inline-size: 20rem;
-	background-color: $yellow-primary;
+	font-family: $button-font-family;
+	font-size: $button-font-size;
+	font-weight: $button-font-weight;
+	padding: $button-padding-default;
+	background-color: $button-primary-background;
+	border: $button-border;
+	border-radius: $button-border-radius;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	transition: background-color 350ms ease-in-out, border 350ms ease-in-out;
+
 	cursor: pointer;
-	color: #000000;
-	transition: background-color 350ms ease-in-out;
-	font-size: 27px;
+	max-width: 24rem;
 
 	&:hover {
-		background-color: $yellow-secondary;
+		background-color: $button-primary-background-hover;
+		border: $button-border-hover;
 	}
 }

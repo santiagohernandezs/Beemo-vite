@@ -1,0 +1,56 @@
+@use '../abstracts/' as *;
+
+.heading-special {
+	font-family: 'Megistica';
+	font-size: $font-size-800;
+	max-inline-size: rem(300);
+
+	span {
+		display: block;
+		width: 70%;
+		text-align: right;
+		position: relative;
+		&::before {
+			position: absolute;
+			content: '';
+			display: block;
+			inline-size: clamp($size-10, 10vw, $size-13);
+			background-color: $color-primary-400;
+			block-size: 1rem;
+			inset-block: 0;
+			margin-block: auto;
+			inset-inline-start: 0;
+		}
+	}
+
+	@include mq(medium) {
+		span {
+			width: 80%;
+		}
+	}
+
+	@include mq(large) {
+		max-inline-size: rem(380);
+		font-size: $font-size-900;
+		span {
+			width: 90%;
+		}
+	}
+}
+
+.heading-2 {
+	font-size: $font-size-800;
+	font-family: $font-family-accent;
+	max-inline-size: 20ch;
+	text-transform: uppercase;
+
+	// span {
+	// 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+	// }
+}
+
+.heading-3 {
+	font-size: $font-size-900;
+	text-transform: uppercase;
+	font-family: $font-family-accent;
+}

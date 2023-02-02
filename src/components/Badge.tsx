@@ -1,18 +1,17 @@
 type Props = {
 	src: string
 	alt: string
-	p: string
+	content: string
 }
 
-export default function Badge({ src, alt, p }: Props): JSX.Element {
+export default function Badge({ src, alt, content }: Props): JSX.Element {
 	return (
-		<div className='badge__container'>
-			<div className='badge__container-badge'>
-				<img className='badge__container-badge-img' src={src} alt={alt} />
+		<div className='badge'>
+			<div className='badge__img-container'>
+				<img src={src} alt={alt} />
 			</div>
-			<div className='badge__container-text'>
-				<p>{p}</p>
-			</div>
+
+			<p className='grid-item'>{content}</p>
 		</div>
 	)
 }
