@@ -8,7 +8,7 @@ import {
 	Stars,
 	UserProfileCirle
 } from '@assets/index'
-import { BadgeInfo, TileInfo } from '@models/index'
+import type { BadgeInfo, TileInfo } from '@models/index'
 
 const badgeInfo: Array<BadgeInfo> = [
 	{

@@ -1,10 +1,6 @@
-type Props = {
-	src: string
-	alt: string
-	content: string
-}
+import type { BadgeInfo } from '@/models'
 
-export default function Badge({ src, alt, content }: Props): JSX.Element {
+export default function Badge({ src, alt, content }: BadgeInfo): JSX.Element {
 	return (
 		<div className='badge'>
 			<div className='badge__img-container'>
