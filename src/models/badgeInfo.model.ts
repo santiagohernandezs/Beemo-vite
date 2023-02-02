@@ -1,5 +1,5 @@
 export interface BadgeInfo {
-	src: any
+	src: string
 	alt: string
-	p: string
+	content: string
 }

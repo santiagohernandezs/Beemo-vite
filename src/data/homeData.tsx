@@ -14,27 +14,27 @@ const badgeInfo: Array<BadgeInfo> = [
 	{
 		src: ColumnVertical,
 		alt: 'frame',
-		p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
 	},
 	{
 		src: FlexAlignSpaced,
 		alt: 'ruler',
-		p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
 	},
 	{
 		src: UserProfileCirle,
 		alt: 'education',
-		p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
 	},
 	{
 		src: Layout,
 		alt: 'layout',
-		p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
 	},
 	{
 		src: Layers,
 		alt: 'frames',
-		p: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
+		content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis.'
 	}
 ]
 
