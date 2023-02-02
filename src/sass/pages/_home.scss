@@ -48,284 +48,89 @@
 	}
 }
 
-// Need to review code below
-
-.about {
+.visuals {
 	position: relative;
-	min-height: 100vh;
-	margin-top: 5rem;
+	height: 83vh;
+	background-color: $color-neutral-100;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 
-	&__text-container {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		height: 24%;
-		gap: 15rem;
-
-		&-title {
-			font-family: 'Raleway', sans-serif;
-			color: $color-accent-400;
-			height: 114px;
-			width: 31%;
-
-			& > h1 {
-				width: 38rem;
-				height: auto;
-				font-style: normal;
-				font-weight: $font-weight-semi-bold;
-				font-size: $font-size-700;
-				line-height: 60px;
-			}
-		}
-
-		&-p {
-			font-family: 'Raleway', sans-serif;
-
-			font-weight: $font-weight-default;
-			width: 762px;
-			height: 97px;
-			font-size: 22px;
-			line-height: 143%;
-			text-align: justify;
-			color: #000000;
-		}
-
-		h1 > span {
-			color: $color-primary-400;
-		}
+	&__app3d {
+		height: 100%;
+		width: 50%;
+		// display: flex;
+		// justify-content: center;
+		// align-items: center;
 	}
 
-	.cards {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 55%;
-		margin: 5rem 0rem;
-		font-family: 'Raleway', sans-serif;
-
-		&__container {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			gap: 138px;
-			padding: 70px 10px;
-			margin-top: 20px;
-
-			.card {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				background-color: #fffffe;
-				padding-top: 2rem;
-				width: 375px;
-				height: 380px;
-				border-radius: 15px;
-				box-shadow: 0px 5px 42px rgba(0, 0, 0, 0.22);
-			}
-
-			.card__image__container {
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-
-				height: auto;
-				filter: drop-shadow(rgba(0, 0, 0, 0.01) -22.3768px 41.0242px 18.6473px)
-					drop-shadow(rgba(0, 0, 0, 0.05) -12.1208px 23.3092px 15.8502px)
-					drop-shadow(rgba(0, 0, 0, 0.09) -5.5942px 10.256px 12.1208px)
-					drop-shadow(rgba(0, 0, 0, 0.1) -0.932367px 2.7971px 6.52657px)
-					drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 0px);
-			}
-
-			.card__title__container {
-				color: #2e2b28;
-				padding: 5%;
-				margin-top: 0.5%;
-
-				font-size: $font-size-400;
-			}
-
-			.card__paragraph__container {
-				font-style: normal;
-
-				font-weight: $font-weight-medium;
-				color: rgb(46, 43, 40);
-				padding: 3% 7%;
-				text-align: justify;
-				font-size: $font-size-400;
-			}
-		}
-	}
-
-	.explanation {
+	&__text {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		height: 100%;
+		width: 50%;
+		gap: 4rem;
 
-		&__text-container {
+		&-card {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			margin-bottom: 8rem;
-
-			&-title > h1 {
-				font-family: 'Raleway', sans-serif;
-				color: $color-accent-400;
-				height: auto;
-				font-style: normal;
-
-				font-weight: $font-weight-semi-bold;
-				font-size: 51px;
-				line-height: 60px;
-			}
+			width: 100%;
+			grid-column-gap: 3rem;
 		}
 
-		&__badges__container {
+		&-h1 {
+			font-family: 'Megistica';
+			color: $color-accent-400;
+			height: auto;
+			font-style: normal;
+			font-size: 5rem;
+		}
+
+		&-tiles {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
 			flex-wrap: wrap;
-			margin-bottom: 10rem;
-			width: 72%;
-			column-gap: 9rem;
-			row-gap: 7rem;
+			gap: 2rem;
+			height: 43%;
+			padding: 0.5rem;
 
-			.badge__container {
+			.tile {
+				width: 39%;
+				height: 38%;
+				background-color: rgba(255, 190, 11, 0.1);
+				border-radius: 21px;
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
+				justify-content: space-evenly;
 				align-items: center;
 
-				width: 22rem;
-
-				&-badge {
+				&__icon {
+					height: 67%;
+					width: 26%;
+					background-color: rgba(255, 254, 254, 0.51);
+					border-radius: 20px;
 					display: flex;
-					flex-direction: column;
 					justify-content: center;
 					align-items: center;
 
-					height: 7rem;
-					width: 7rem;
-					border-radius: 70px;
-					margin-bottom: 2rem;
-					background-color: #ffffff;
-					box-shadow: rgba(0, 0, 0, 0.22) 0px 5px 42px;
-					transition: all 0.2s ease-in-out;
-
-					&:hover {
-						transform: scale(1.1);
-						transition: all 0.2s ease-in-out;
-						background-color: rgba(255, 190, 11, 0.5);
-					}
-
 					&-img {
-						height: 3rem;
-						width: 3rem;
+						width: 60%;
 					}
 				}
 
-				&-text {
-					font-family: Raleway;
-					color: rgb(46, 43, 40);
+				&__text {
 					height: auto;
-					font-style: normal;
-					font-size: 25px;
-					text-align: center;
-				}
-			}
-		}
-	}
-
-	.visuals {
-		position: relative;
-		height: 83vh;
-		background-color: $color-neutral-100;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-
-		&__app3d {
-			height: 100%;
-			width: 50%;
-			// display: flex;
-			// justify-content: center;
-			// align-items: center;
-		}
-
-		&__text {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			height: 100%;
-			width: 50%;
-			gap: 4rem;
-
-			&-card {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				width: 100%;
-				grid-column-gap: 3rem;
-			}
-
-			&-h1 {
-				font-family: 'Megistica';
-				color: $color-accent-400;
-				height: auto;
-				font-style: normal;
-				font-size: 5rem;
-			}
-
-			&-tiles {
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				flex-wrap: wrap;
-				gap: 2rem;
-				height: 43%;
-				padding: 0.5rem;
-
-				.tile {
-					width: 39%;
-					height: 38%;
-					background-color: rgba(255, 190, 11, 0.1);
-					border-radius: 21px;
+					width: 58%;
+					font-family: 'Raleway';
 					display: flex;
-					justify-content: space-evenly;
-					align-items: center;
-
-					&__icon {
-						height: 67%;
-						width: 26%;
-						background-color: rgba(255, 254, 254, 0.51);
-						border-radius: 20px;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-
-						&-img {
-							width: 60%;
-						}
-					}
-
-					&__text {
-						height: auto;
-						width: 58%;
-						font-family: 'Raleway';
-						display: flex;
-						flex-direction: column;
-						gap: 0.4rem;
-					}
+					flex-direction: column;
+					gap: 0.4rem;
 				}
 			}
 		}

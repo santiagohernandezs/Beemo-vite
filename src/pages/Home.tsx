@@ -84,7 +84,7 @@ function Home(): JSX.Element {
 						</div>
 					</div>
 				</section>
-				<section className='about'>
+				<section className='section'>
 					<div className='visuals'>
 						<div className='visuals__app3d'>
 							<Suspense fallback={<h1>Cargando...</h1>}>
